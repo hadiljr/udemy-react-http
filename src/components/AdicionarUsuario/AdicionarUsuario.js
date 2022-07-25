@@ -21,13 +21,13 @@ function AdicionarUsuario () {
       headers:{'Content-Type':'application/json'},
       body:JSON.stringify(usuario)
     })
-    .then(res => res.json())
-    .then(data => {
-
-      setNome('');
-      setSobrenome('');
-      setEmail('');
-      
+    .then(res => {
+      if(res.ok){
+        setNome('');
+        setSobrenome('');
+        setEmail('');
+        alert('Usuário Cadastrado com sucesso!');
+      }
     })
   }
 

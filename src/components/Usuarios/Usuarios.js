@@ -23,14 +23,10 @@ function Usuarios () {
     });
   },[])
 
-  const adicionarUsuario = (usuario) => {
-    setUsuarios(usrs => [...usrs,usuario]);
-  }
-
   const removerUsuario = (usuario) => {
     if (window.confirm(`Tem certeza que deseja remover "${usuario.nome} ${usuario.sobrenome}"?`)) {
 
-      fetch(`http://reqres.in/api/users/${usuario.id}`,{
+      fetch(`https://reqres.in/api/users/${usuario.id}`,{
         method:"DELETE"
       })
       .then(res=>{
